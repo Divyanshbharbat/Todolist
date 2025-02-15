@@ -13,7 +13,7 @@ const signup =  () => {
   const onSubmit = async (data) => {
 
 
-    await axios.post(`${import.meta.env.VITE_FRONT_URL}/signup`, data,{withCredentials:true}).then((res) => {
+    await axios.post(`${import.meta.env.VITE_FRONT_URL}/signup`, data,{withCredentials:true,}).then((res) => {
        
         if (res.data == 'success') {
           toast.success("Signup Successfully")

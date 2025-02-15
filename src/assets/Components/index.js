@@ -23,7 +23,7 @@ const corsOptions = {
 app.use(cors({
   origin: "https://todolist-sknn.vercel.app",  // Allow your frontend domain
   methods: "GET,POST,PUT,DELETE",
-  credentials: true
+  credentials: true,
 }));
 app.use(cookieParser());
 
