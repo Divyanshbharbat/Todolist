@@ -17,7 +17,7 @@ let navigate=useNavigate()
 
     try {
       // Send a DELETE request for the specific item
-      const response = await axios.delete(`http://localhost:7000/deletedata/${_id}`, {
+      const response = await axios.delete(`${import.meta.env.VITE_FRONT_URL}/deletedata/${_id}`, {
         headers: {
           Authorization: `Bearer ${token}`, // Send token in Authorization header
         },
@@ -36,7 +36,7 @@ toast.success("Successfully Deleted")
     try {
       const token = localStorage.getItem("token");
 
-      const response = await axios.get("http://localhost:7000/getdata", {
+      const response = await axios.get(`${import.meta.VITE_FRONT_URL}/getdata`, {
         headers: {
           Authorization: `Bearer ${token}`, // Send token in Authorization header
         },
@@ -55,7 +55,7 @@ toast.success("Successfully Deleted")
     try {
       const token = localStorage.getItem("token");
 
-      await axios.post("http://localhost:7000/senddata", { time, work }, {
+      await axios.post(`${import.meta.env.VITE_FRONT_URL}/senddata`, { time, work }, {
         headers: {
           Authorization: `Bearer ${token}`, // Send token in Authorization header
         },
