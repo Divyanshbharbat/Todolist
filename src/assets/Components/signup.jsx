@@ -13,7 +13,7 @@ const signup =  () => {
   const onSubmit = async (data) => {
 
 
-    await axios.post(`http://localhost:7000/signup`, data).then((res) => {
+    await axios.post(`${import.meta.env.VITE_FRONT_URL}/signup`, data).then((res) => {
        
         if (res.data == 'success') {
           toast.success("Signup Successfully")
@@ -85,7 +85,7 @@ const signup =  () => {
                   </div>
                  
                   <div className="button d-flex justify-content-center  ">
-                    <NavLink to={'/login'}> <button type="button" id='btn' className="btn bg-white mx-3">Login</button></NavLink>
+                    <NavLink to={'/'}> <button type="button" id='btn' className="btn bg-white mx-3">Login</button></NavLink>
                     <button type="submit" id='btn2' className="btn bg-white  mx-3">Submit</button>
                   </div>
                 </form>

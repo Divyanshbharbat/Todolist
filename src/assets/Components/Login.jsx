@@ -14,7 +14,7 @@ const Login = () => {
   const onSubmit = async (data) => {
 
 
-    await axios.post(`http://localhost:7000/login`, data).then((res) =>
+    await axios.post(`${import.meta.env.VITE_FRONT_URL}/login`, data).then((res) =>
     {
       if(res.data.message=="success")
       {
