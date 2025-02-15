@@ -25,6 +25,11 @@ app.use(cors({
   methods: "GET,POST,PUT,DELETE",
   credentials: true,
 }));
+// app.use(cors({
+//   origin: "http://localhost:5173",  // Allow your frontend domain
+//   methods: "GET,POST,PUT,DELETE",
+//   credentials: true,
+// }));
 app.use(cookieParser());
 
 // JWT Middleware
@@ -42,7 +47,7 @@ const jwtMiddleware = (req, res, next) => {
     // Attempt to verify the token
     const decoded = jwt.verify(token,process.env.VITE_KEY);
     req.user = decoded;
-   
+   console.log(req.user)
     next();
   } catch (error) {
     console.log("JWT verification error:", error);
@@ -56,6 +61,7 @@ app.post("/login", async (req, res) => {
 
   try {
     const user = await User.findOne({ username });
+    console.log(user)
     if (!user) {
       return res.status(400).json({ error: "Invalid username or password" });
     }
@@ -64,7 +70,7 @@ app.post("/login", async (req, res) => {
     if (!isPasswordValid) {
       return res.status(400).json({ error: "Invalid username or password" });
     }
-console.log(process.env.VITE_KEY)
+
     const token = jwt.sign({ username: username },process.env.VITE_KEY, { expiresIn: "1h" });
    console.log(token)
     res.cookie("tokens", token, { httpOnly: true, secure: false, sameSite: 'none' });
@@ -136,7 +142,7 @@ app.get("/getdata", jwtMiddleware, async (req, res) => {
 
   let find = await User.findOne({ username: user }).populate("data") // Adjust the filter accordingly
   
-  
+  console.log("find",find)
 
     res.json({data:find.data,username:user});
   } catch (err) {

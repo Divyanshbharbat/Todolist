@@ -36,7 +36,7 @@ toast.success("Successfully Deleted")
     try {
       const token = localStorage.getItem("token");
 
-      const response = await axios.get(`${import.meta.VITE_FRONT_URL}/getdata`, {
+      const response = await axios.get(`${import.meta.env.VITE_FRONT_URL}/getdata`, {
         headers: {
           Authorization: `Bearer ${token}`, // Send token in Authorization header
         },
