@@ -20,7 +20,11 @@ const corsOptions = {
 };
 
 // Use the CORS middleware with the specified options
-app.use(cors(corsOptions));
+app.use(cors({
+  origin: "https://todolist-sknn.vercel.app",  // Allow your frontend domain
+  methods: "GET,POST,PUT,DELETE",
+  credentials: true
+}));
 app.use(cookieParser());
 
 // JWT Middleware
