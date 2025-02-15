@@ -21,7 +21,7 @@ const corsOptions = {
 
 // Use the CORS middleware with the specified options
 app.use(cors({
-  origin: "https://todolist-sknn.vercel.app",  // Allow your frontend domain
+  origin: "https://todolist-divyansh.vercel.app",  // Allow your frontend domain
   methods: "GET,POST,PUT,DELETE",
   credentials: true,
 }));
