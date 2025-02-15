@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 const corsOptions = {
-  origin: 'https://todolist-fwpx.onrender.com',
+  origin: process.env.VITE_FRONT_URL,
   credentials: true, // Allow cross-origin requests with credentials (cookies)
 };
 
