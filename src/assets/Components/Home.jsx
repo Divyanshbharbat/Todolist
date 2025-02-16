@@ -128,7 +128,7 @@ const Home = () => {
     />
   </div>
   <div className="input my-2">
-    <button className=' fw-bold border-0 p-3 text-white btn2'  style={{ borderRadius: "1vh" }} type="submit">Submit</button>
+    <button className=' fw-bold border-0 p-3 text-black btn2'  style={{ borderRadius: "1vh" }} type="submit">Submit</button>
   </div>
 </div>
 
