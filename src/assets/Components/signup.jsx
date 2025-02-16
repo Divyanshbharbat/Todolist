@@ -1,7 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
-
+import './signup.css'
 import { useNavigate } from 'react-router-dom';
 import { toast, Toaster } from 'react-hot-toast'
 import { NavLink } from 'react-router-dom';
@@ -29,14 +29,14 @@ const signup =  () => {
   };
 
   return (
-    <div id='login' className="container-fluid bg-success " style={{ height: "100vh", width: "100%" }}>
+    <div  className="container-fluid  " style={{ height: "100vh", width: "100%" }}>
       <Toaster className="bg-dark text-white" />
       <div className="row d-flex">
-        <div className="col-lg-6 col-sm-12">
-          <div className="container-fluid d-flex justify-content-center my-4 py-5  ">
-            <div className="head border  " id='box' style={{ height: '70vh', width: "90vh", borderRadius: "3vh" }}>
+        <div  className="col-lg-6 col-sm-12">
+          <div  className="container-fluid d-flex justify-content-center my-4 py-5  ">
+            <div className="head border  " id='login' style={{ height: '70vh', width: "90vh", borderRadius: "3vh" }}>
               <h1 className="text-center  my-5" style={{color:"black",fontSize:"6vh"}}>Signup</h1>
-              <div className="container-fluid  text-center my-5">
+              <div  className="container-fluid  text-center my-5">
                 <form className='b' onSubmit={handleSubmit(onSubmit)}>
                   <div className="input my-5 mx-3">
                     <input
